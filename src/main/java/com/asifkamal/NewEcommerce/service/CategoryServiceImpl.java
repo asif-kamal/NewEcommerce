@@ -1,10 +1,12 @@
 package com.asifkamal.NewEcommerce.service;
 
 import com.asifkamal.NewEcommerce.model.Category;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CategoryServiceImpl implements CategoryService{
 
     private List<Category> categories = new ArrayList<>();
