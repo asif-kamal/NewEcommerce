@@ -17,7 +17,13 @@ import java.util.List;
 @RequestMapping("/api")
 public class CategoryController {
 
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
+
+    @GetMapping("/echo")
+    public ResponseEntity<String> echoMessage(@RequestParam(name = "message",
+            defaultValue = "Hello World") String message) {
+        return new ResponseEntity<>("Echoed Message: " + message, HttpStatus.OK);
+    }
 
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
